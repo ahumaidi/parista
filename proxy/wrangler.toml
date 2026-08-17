@@ -1,0 +1,13 @@
+name = "parista-proxy"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# Only requests from this origin are allowed to call the proxy.
+[vars]
+ALLOWED_ORIGIN = "https://ahumaidi.github.io"
+# Hard ceiling on scans per calendar day, independent of the Anthropic Console spend limit.
+DAILY_SCAN_LIMIT = "150"
+
+[[kv_namespaces]]
+binding = "QUOTA"
+id = "77d939a15ad04436bdb2318ef1b63f73"
