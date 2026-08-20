@@ -1,6 +1,6 @@
 const MODEL = "claude-sonnet-5";
 const MAX_TOKENS = 500;
-const PROMPT = "Inspect this coffee bag. Return ONLY valid JSON with these keys: roast (very light|light|medium-light|medium|medium-dark|dark|unknown), process (washed|natural|honey|wet-hulled|anaerobic|unknown), decaf (none|EA|Swiss Water|CO2|unknown), condition (normal|oily|defects|unknown), origin (string), variety (string), roastDate (raw string). Do not infer unseen facts.";
+const PROMPT = "Inspect this coffee bag. Return ONLY valid JSON with these keys: roast (very light|light|medium-light|medium|medium-dark|dark|unknown), process (washed|natural|honey|wet-hulled|anaerobic|unknown), origin (string), variety (string). Do not infer unseen facts.";
 
 function corsHeaders(env) {
   return {
