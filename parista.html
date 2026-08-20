@@ -136,7 +136,7 @@
     .timer-actions{display:flex;gap:10px;justify-content:center}
     .timer-actions .btn{width:auto}
     .current-instruction{font-family:var(--serif);font-size:27px;line-height:1.2;min-height:66px;max-width:500px;margin:0 auto}
-    .guide-range{display:block;margin:-10px auto 14px;color:var(--olive-dark);font-family:var(--mono);font-size:12px;font-weight:700}
+    .guide-range{display:block;margin:6px auto 14px;color:var(--olive-dark);font-family:var(--mono);font-size:12px;font-weight:700}
     .done-mark{display:grid;place-items:center;width:106px;height:106px;margin:8px auto 22px;border-radius:50%;background:var(--gold);color:var(--ink);font-family:var(--serif);font-size:58px}
     .symptoms{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .symptom{border:1.5px solid rgba(51,38,26,.22);border-radius:16px;background:transparent;color:var(--ink);padding:16px;text-align:left;font-weight:800;cursor:pointer}
@@ -676,7 +676,7 @@
         <div class="timer-wrap ${g.running?"running":""}" style="--p:${progress}"><div class="bloom-ring"></div><div class="bloom-ring"></div><div class="bloom-ring"></div>
           <svg class="progress" viewBox="0 0 240 240"><circle class="track" cx="120" cy="120" r="110"/><circle class="arc" cx="120" cy="120" r="110" style="stroke-dashoffset:${691*(1-progress)}"/></svg>
           <div class="timer-time">${display}</div></div>
-        <p class="current-instruction">${step[0]}</p>${step[1]&&step[1]!=="count up"?`<span class="guide-range">Manual range: ${step[1]}</span>`:""}
+        <p class="current-instruction">${step[0]}</p>${step[1]&&step[1]!=="count up"?`<span class="guide-range">${state.famousBrew?`Starts ${step[1]}`:`Manual range: ${step[1]}`}</span>`:""}
         ${!state.famousBrew&&state.method==="cold"&&g.index===1&&!g.running?`<div class="chips" id="coldHours" style="justify-content:center;margin:18px 0">${[12,15,18].map(h=>`<button class="chip ${g.coldHours===h?"active":""}" data-value="${h}">${h} hours</button>`).join("")}</div>`:""}
         <div class="timer-actions actions">${timed?`<button class="btn gold" id="toggleTimer">${g.running?"Pause":"Start"}</button>`:""}<button class="btn" id="nextStep">${g.index===brew.steps.length-1?"Finish brew":"Next step →"}</button></div>
         ${timed?`<button class="text-link" id="resetTimer">Reset timer</button>`:""}
